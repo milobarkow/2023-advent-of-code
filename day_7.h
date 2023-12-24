@@ -89,7 +89,7 @@ int checkSpecialCase(const char *hand, enum Case sc) {
     return pairCount == 2;
 }
 
-int partOne(char **data, size_t data_size) {
+void partOne(char **data, size_t data_size) {
     Hand tracker[data_size];
     for (size_t i = 0; i < data_size; i++) {
         tracker[i].cards = data[i];
@@ -126,7 +126,6 @@ int partOne(char **data, size_t data_size) {
     for (size_t i = 0; i < data_size; i++) {
         count += tracker[i].val * (i + 1);
     }
-    freeCharArray(data, data_size);
     return count;
 }
 
@@ -135,10 +134,10 @@ int getJokerCount(const char *hand) {
     for (int i = 0; i < HAND_SIZE; i++) {
         if (hand[i] == 'J') count++;
     }
-    return count;
+    printf("Part 1 Answer: %i\n", count);
 }
 
-int partTwo(char **data, size_t data_size) {
+void partTwo(char **data, size_t data_size) {
     Hand tracker[data_size];
     for (size_t i = 0; i < data_size; i++) {
         tracker[i].cards = data[i];
@@ -192,6 +191,5 @@ int partTwo(char **data, size_t data_size) {
         count += tracker[i].val * (i + 1);
         printf("hand=%s, rank=%i\n", tracker[i].cards, tracker[i].c);
     }
-    freeCharArray(data, data_size);
-    return count;
+    printf("Part 2 Answer: %i\n", count);
 }

@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-int partOne(char **data, size_t data_size) {
+void partOne(char **data, size_t data_size) {
     int count = 0;
     for (int i = 0; i < data_size; i++) {
         char *c = data[i];
@@ -39,12 +39,11 @@ int partOne(char **data, size_t data_size) {
             c++;
         }
         if (possible == 1) count += id;
-        free(data[i]);
     }
-    return count;
+    printf("Part 1 Answer: %i\n", count);
 }
 
-int partTwo(char **data, size_t data_size) {
+void partTwo(char **data, size_t data_size) {
     int count = 0;
     for (int i = 0; i < data_size; i++) {
         char *c = strchr(data[i], ':') + 1;
@@ -76,7 +75,6 @@ int partTwo(char **data, size_t data_size) {
         else if (strcmp(color, "blue") == 0 && (temp >= b)) b = temp;
 
         count += r * g * b;
-        free(data[i]);
     }
-    return count;
+    printf("Part 2 Answer: %i\n", count);
 }

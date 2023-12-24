@@ -1,8 +1,11 @@
 #include <stdio.h>  
 #include <stdlib.h> 
 #include <string.h> 
+#include <assert.h>
+#include <ctype.h>
+#include <errno.h>
 
-char** copyCharArray(char** original, size_t rows, size_t cols) {
+char** copyCharArray(char** original, size_t rows) {
     char** copy = (char**)malloc(rows * sizeof(char*));
     if (copy == NULL) {
         perror("Memory allocation error");

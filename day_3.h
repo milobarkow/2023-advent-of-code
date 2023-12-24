@@ -8,7 +8,7 @@ int numPlaces (int n) {
     return 1 + numPlaces (n / 10);
 }
 
-int partOne(char **data, size_t data_size) {
+void partOne(char **data, size_t data_size) {
     const char *dels_1 = ".+*#$!@%^&()-_=[]{}/\\<>";
     const char *dels_2 = "+*#$!@%^&()-_=[]{}/\\<>";
     int count = 0;
@@ -43,12 +43,11 @@ int partOne(char **data, size_t data_size) {
             pch = strtok(NULL, dels_1);
         }
     }
-    free(data);
-    return count;
+    printf("Part 1 Answer: %i\n", count);
 }
 
 
-int partTwo(char **data, size_t data_size) {
+void partTwo(char **data, size_t data_size) {
     const char *dels_1 = ".+*#$!@%^&()-_=[]{}/\\<>";
     const char *dels_2 = "+*#$!@%^&()-_=[]{}/\\<>";
     int count = 0;
@@ -102,7 +101,5 @@ int partTwo(char **data, size_t data_size) {
             }
         }
     }
-
-    freeCharArray(data, data_size);
-    return count;
+    printf("Part 2 Answer: %i\n", count);
 }

@@ -7,7 +7,7 @@
 #define INFO_ROWS 2
 #define INFO_COLS 1
 
-int partOne(char **data, size_t data_size) {
+void partOne(char **data, size_t data_size) {
     int count = 1;
     int info[INFO_ROWS][INFO_COLS];
     char *dels = " ";
@@ -34,12 +34,11 @@ int partOne(char **data, size_t data_size) {
         }
         count *= curr;
     }
-    return count;
+    printf("Part 1 Answer: %i\n", count);
 }
 
 void append(char* s, char* c)
 {
-    // snprintf(s, strlen(s) + strlen(c), "%s%s", s, c);
     size_t len_s = strlen(s);
     size_t len_c = strlen(c);
     char *temp = malloc(len_s + len_c + 1);
@@ -53,7 +52,7 @@ void append(char* s, char* c)
     free(temp);
 }
 
-int partTwo(char **data, size_t data_size) {
+void partTwo(char **data, size_t data_size) {
     char time[100] = "";
     char distance[100] = "";
     char *dels = " ";
@@ -77,6 +76,5 @@ int partTwo(char **data, size_t data_size) {
         long long int a = j * (time_n - j);
         if (a > distance_n) curr++;
     }
-    freeCharArray(data, data_size);
-    return curr;
+    printf("Part 2 Answer: %i\n", count);
 }

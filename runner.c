@@ -27,10 +27,9 @@ int main(void) {
     }
     fclose(file);
 
-    int answer = partOne(lines, lineCount);
-    printf("Answer: %i", answer);
+    partTwo(lines, lineCount);
 
-    free(lines);
+    freeCharArray(lines, lineCount);
     return 0; 
 }
 

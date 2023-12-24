@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <ctype.h>
 
-int partOne(char **data, size_t data_size) {
+void partOne(char **data, size_t data_size) {
     int ret = 0;
     for (size_t i = 0; i < data_size; i++) {
         char *c = data[i];
@@ -16,12 +16,11 @@ int partOne(char **data, size_t data_size) {
         }
         char num[3] = {vals[0], vals[vals_size - 1], '\0'};
         ret += atoi(num);
-        free(data[i]);
     }
-    return ret;
+    printf("Part 1 Answer: %i\n", count);
 }
 
-int partTwo(char **data, size_t data_size) {
+void partTwo(char **data, size_t data_size) {
     int ret = 0;
     char nums[10][10] = {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
     for (size_t i = 0; i < data_size; i++) {
@@ -53,8 +52,7 @@ int partTwo(char **data, size_t data_size) {
         }
         if (num[1] == '\0') num[1] = num[0];
         ret += atoi(num);
-        free(data[i]);
     }
-    return ret;
+    printf("Part 2 Answer: %i\n", count);
 }
 

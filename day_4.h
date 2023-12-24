@@ -2,7 +2,7 @@
 #include <string.h>
 #include <ctype.h>
 
-int partOne(char **data, size_t data_size) {
+void partOne(char **data, size_t data_size) {
     int count = 0;
     for (size_t i = 0; i < data_size; i++) {
         char *line = data[i];
@@ -44,11 +44,11 @@ int partOne(char **data, size_t data_size) {
         count += score;
 
     }
-    return count;
+    printf("Part 1 Answer: %i\n", count);
 }
 
 
-int partTwo(char **data, size_t data_size) {
+void partTwo(char **data, size_t data_size) {
     int card_count[data_size];
     for (size_t i = 0; i < data_size; i++) {
         card_count[i] = 1;
@@ -99,8 +99,9 @@ int partTwo(char **data, size_t data_size) {
         }
     }
     int count = 0;
-    for (size_t i = 0; i < data_size; i++) {count += card_count[i];}
+    for (size_t i = 0; i < data_size; i++) {
+        count += card_count[i];
+    }
 
-    free(data);
-    return count;
+    printf("Part 2 Answer: %i\n", count);
 }
