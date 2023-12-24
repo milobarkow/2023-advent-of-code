@@ -28,7 +28,7 @@ void printNode(const Node *node) {
            node->right_index);
 }
 
-int partOne(char **data, size_t data_size) {
+void partOne(char **data, size_t data_size) {
     size_t key_len = strlen(data[0]);
     size_t *key = malloc(key_len * sizeof(size_t));
     for (size_t i = 0; i < key_len; i++) {
@@ -81,7 +81,6 @@ int partOne(char **data, size_t data_size) {
     arrfree(nodes);
 
     printf("Part 1 Answer: %i\n", count);
-    return count;
 }
 
 unsigned long long gcd( unsigned long long a,  unsigned long long b) {
@@ -95,7 +94,7 @@ unsigned long long getLcm( unsigned long long a,  unsigned long long b)
     return a * b / gcd(a, b);
 }
 
-int partTwo(char **data, size_t data_size) {
+void partTwo(char **data, size_t data_size) {
     size_t key_len = strlen(data[0]);
     size_t *key = malloc(key_len * sizeof(size_t));
     for (size_t i = 0; i < key_len; i++) {
@@ -152,10 +151,9 @@ int partTwo(char **data, size_t data_size) {
         }
         count = getLcm(count, lcm);
     }
-    printf("%llu\n", count);
+    printf("Part 2 Answer: %llu\n", count);
 
     free(key);
     arrfree(indicies);
     arrfree(nodes);
-    return -1;
 }
