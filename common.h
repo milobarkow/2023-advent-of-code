@@ -1,10 +1,27 @@
-#include <stdio.h>  
-#include <stdlib.h> 
-#include <string.h> 
+#ifndef COMMON_H
+#define COMMON_H
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #include <assert.h>
 #include <ctype.h>
 #include <errno.h>
 
+// taken from Tsoding
+// https://github.com/tsoding
+#define DA_INIT_CAP 256
+#define da_append(da, item)                                                          \
+    do {                                                                             \
+        if ((da)->count >= (da)->capacity) {                                         \
+            (da)->capacity = (da)->capacity == 0 ? DA_INIT_CAP : (da)->capacity*2;   \
+            (da)->items = realloc((da)->items, (da)->capacity*sizeof(*(da)->items)); \
+            assert((da)->items != NULL && "Buy more RAM lol");                       \
+        }                                                                            \
+                                                                                     \
+        (da)->items[(da)->count++] = (item);                                         \
+    } while (0)
+    
 char** copyCharArray(char** original, size_t rows) {
     char** copy = (char**)malloc(rows * sizeof(char*));
     if (copy == NULL) {
@@ -31,3 +48,7 @@ void freeCharArray(char** array, size_t rows) {
     }
     free(array);
 }
+
+
+
+#endif
