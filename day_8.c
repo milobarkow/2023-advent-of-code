@@ -1,9 +1,5 @@
 #include "common.h"
 
-// http://nothings.org/stb_ds/
-#define STB_DS_IMPLEMENTATION
-#include "stb_ds.h"
-
 void parseLine(char *parsed_line[], char* line) {
     const char dels[] = " =,()\n";
     char *token;
@@ -28,7 +24,7 @@ void printNode(const Node *node) {
            node->right_index);
 }
 
-void partOne(char **data, size_t data_size) {
+void partOne8(char **data, size_t data_size) {
     size_t key_len = strlen(data[0]);
     size_t *key = malloc(key_len * sizeof(size_t));
     for (size_t i = 0; i < key_len; i++) {
@@ -94,7 +90,7 @@ unsigned long long getLcm( unsigned long long a,  unsigned long long b)
     return a * b / gcd(a, b);
 }
 
-void partTwo(char **data, size_t data_size) {
+void partTwo8(char **data, size_t data_size) {
     size_t key_len = strlen(data[0]);
     size_t *key = malloc(key_len * sizeof(size_t));
     for (size_t i = 0; i < key_len; i++) {
@@ -156,4 +152,9 @@ void partTwo(char **data, size_t data_size) {
     free(key);
     arrfree(indicies);
     arrfree(nodes);
+}
+
+void dayEight(char **data, size_t data_size) {
+    partOne8(data, data_size);
+    partTwo8(data, data_size);
 }

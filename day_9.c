@@ -1,9 +1,5 @@
 #include "common.h"
 
-// http://nothings.org/stb_ds/
-#define STB_DS_IMPLEMENTATION
-#include "stb_ds.h"
-
 void parseLine(int **nums, char* line) {
     const char dels[] = " \n";
     char *token;
@@ -44,7 +40,7 @@ int getNext(int *nums, size_t nums_len, size_t part) {
     }
 }
 
-void partOne(char **data, size_t data_size) {
+void partOne9(char **data, size_t data_size) {
     long long int count = 0;
     int *nums = NULL;
     for (size_t i = 0; i < data_size; i++) {
@@ -55,7 +51,7 @@ void partOne(char **data, size_t data_size) {
     printf("Part 1 Answer: %lli\n", count);
 }
 
-void partTwo(char **data, size_t data_size) {
+void partTwo9(char **data, size_t data_size) {
     long long int count = 0;
     int *nums = NULL;
     for (size_t i = 0; i < data_size; i++) {
@@ -64,4 +60,9 @@ void partTwo(char **data, size_t data_size) {
         nums = NULL;
     }
     printf("Part 2 Answer: %lli\n", count);
+}
+
+void dayNine(char **data, size_t data_size) {
+    partOne9(data, data_size);
+    partTwo9(data, data_size);
 }

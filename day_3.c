@@ -8,13 +8,13 @@ int numPlaces (int n) {
     return 1 + numPlaces (n / 10);
 }
 
-void partOne(char **data, size_t data_size) {
+void partOne3(char **data, size_t data_size) {
     const char *dels_1 = ".+*#$!@%^&()-_=[]{}/\\<>";
     const char *dels_2 = "+*#$!@%^&()-_=[]{}/\\<>";
     int count = 0;
     int line_length = 140;
 
-    char** data_copy = copyCharArray(data, data_size, line_length);
+    char** data_copy = copyCharArray(data, data_size);
 
     for (int i = 0; i < data_size; i++) {
         char *line = data[i];
@@ -47,7 +47,7 @@ void partOne(char **data, size_t data_size) {
 }
 
 
-void partTwo(char **data, size_t data_size) {
+void partTwo3(char **data, size_t data_size) {
     const char *dels_1 = ".+*#$!@%^&()-_=[]{}/\\<>";
     const char *dels_2 = "+*#$!@%^&()-_=[]{}/\\<>";
     int count = 0;
@@ -102,4 +102,9 @@ void partTwo(char **data, size_t data_size) {
         }
     }
     printf("Part 2 Answer: %i\n", count);
+}
+
+void dayThree(char **data, size_t data_size) {
+    partOne3(data, data_size);
+    partTwo3(data, data_size);
 }

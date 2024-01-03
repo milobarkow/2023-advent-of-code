@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <ctype.h>
 
-void partOne(char **data, size_t data_size) {
-    int ret = 0;
+void partOne1(char **data, size_t data_size) {
+    int count = 0;
     for (size_t i = 0; i < data_size; i++) {
         char *c = data[i];
         char vals[strlen(c)];
@@ -15,13 +15,13 @@ void partOne(char **data, size_t data_size) {
             c++;
         }
         char num[3] = {vals[0], vals[vals_size - 1], '\0'};
-        ret += atoi(num);
+        count += atoi(num);
     }
     printf("Part 1 Answer: %i\n", count);
 }
 
-void partTwo(char **data, size_t data_size) {
-    int ret = 0;
+void partTwo1(char **data, size_t data_size) {
+    int count = 0;
     char nums[10][10] = {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
     for (size_t i = 0; i < data_size; i++) {
         char *c = data[i];
@@ -51,8 +51,12 @@ void partTwo(char **data, size_t data_size) {
             c++;
         }
         if (num[1] == '\0') num[1] = num[0];
-        ret += atoi(num);
+        count += atoi(num);
     }
     printf("Part 2 Answer: %i\n", count);
 }
 
+void dayOne(char **data, size_t data_size) {
+    partOne1(data, data_size);
+    partTwo1(data, data_size);
+}

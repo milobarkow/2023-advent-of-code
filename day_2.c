@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-void partOne(char **data, size_t data_size) {
+void partOne2(char **data, size_t data_size) {
     int count = 0;
     for (int i = 0; i < data_size; i++) {
         char *c = data[i];
@@ -43,7 +43,7 @@ void partOne(char **data, size_t data_size) {
     printf("Part 1 Answer: %i\n", count);
 }
 
-void partTwo(char **data, size_t data_size) {
+void partTwo2(char **data, size_t data_size) {
     int count = 0;
     for (int i = 0; i < data_size; i++) {
         char *c = strchr(data[i], ':') + 1;
@@ -77,4 +77,9 @@ void partTwo(char **data, size_t data_size) {
         count += r * g * b;
     }
     printf("Part 2 Answer: %i\n", count);
+}
+
+void dayTwo(char **data, size_t data_size) {
+    partOne2(data, data_size);
+    partTwo2(data, data_size);
 }

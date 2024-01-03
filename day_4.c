@@ -1,8 +1,6 @@
-#include <stdio.h>
-#include <string.h>
-#include <ctype.h>
+#include "common.h"
 
-void partOne(char **data, size_t data_size) {
+void partOne4(char **data, size_t data_size) {
     int count = 0;
     for (size_t i = 0; i < data_size; i++) {
         char *line = data[i];
@@ -48,7 +46,7 @@ void partOne(char **data, size_t data_size) {
 }
 
 
-void partTwo(char **data, size_t data_size) {
+void partTwo4(char **data, size_t data_size) {
     int card_count[data_size];
     for (size_t i = 0; i < data_size; i++) {
         card_count[i] = 1;
@@ -104,4 +102,9 @@ void partTwo(char **data, size_t data_size) {
     }
 
     printf("Part 2 Answer: %i\n", count);
+}
+
+void dayFour(char **data, size_t data_size) {
+    partOne4(data, data_size);
+    partTwo4(data, data_size);
 }

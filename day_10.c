@@ -1,3 +1,5 @@
+#include "common.h"
+
 typedef struct Node {
     char *val;
     size_t id;
@@ -148,7 +150,7 @@ size_t getMax(Node *n) {
     return distance / 2;
 }
 
-void partOne(char **data, size_t data_size) {
+void partOne10(char **data, size_t data_size) {
     size_t grid_w = strlen(data[0]);
     size_t grid_h = data_size;
     size_t node_count = grid_w * grid_h;
@@ -276,7 +278,7 @@ char getSReplacement(DA_NODE loop) {
     return ret;
 }
 
-void partTwo(char **data, size_t data_size) {
+void partTwo10(char **data, size_t data_size) {
     size_t grid_w = strlen(data[0]);
     size_t grid_h = data_size;
     size_t node_count = grid_w * grid_h;
@@ -345,4 +347,9 @@ void partTwo(char **data, size_t data_size) {
     }
 
     printf("Part 2 Answer: %i\n", count);
+}
+
+void dayTen(char **data, size_t data_size) {
+    partOne10(data, data_size);
+    partTwo10(data, data_size);
 }

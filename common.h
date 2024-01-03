@@ -7,6 +7,23 @@
 #include <assert.h>
 #include <ctype.h>
 #include <errno.h>
+#include <string.h>
+#include <ctype.h>
+
+void dayOne(char **lines, size_t lineCount);
+void dayTwo(char **lines, size_t lineCount);
+void dayThree(char **lines, size_t lineCount);
+void dayFour(char **lines, size_t lineCount);
+void dayFive(char **lines, size_t lineCount);
+void daySix(char **lines, size_t lineCount);
+void daySeven(char **lines, size_t lineCount);
+void dayEight(char **lines, size_t lineCount);
+void dayNine(char **lines, size_t lineCount);
+void dayTen(char **lines, size_t lineCount);
+
+// http://nothings.org/stb_ds/
+#define STB_DS_IMPLEMENTATION
+#include "stb_ds.h"
 
 // taken from Tsoding
 // https://github.com/tsoding
@@ -48,7 +65,5 @@ void freeCharArray(char** array, size_t rows) {
     }
     free(array);
 }
-
-
 
 #endif

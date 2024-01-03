@@ -7,7 +7,7 @@
 #define INFO_ROWS 2
 #define INFO_COLS 1
 
-void partOne(char **data, size_t data_size) {
+void partOne6(char **data, size_t data_size) {
     int count = 1;
     int info[INFO_ROWS][INFO_COLS];
     char *dels = " ";
@@ -52,7 +52,7 @@ void append(char* s, char* c)
     free(temp);
 }
 
-void partTwo(char **data, size_t data_size) {
+void partTwo6(char **data, size_t data_size) {
     char time[100] = "";
     char distance[100] = "";
     char *dels = " ";
@@ -77,4 +77,9 @@ void partTwo(char **data, size_t data_size) {
         if (a > distance_n) curr++;
     }
     printf("Part 2 Answer: %i\n", count);
+}
+
+void daySix(char **data, size_t data_size) {
+    partOne6(data, data_size);
+    partTwo6(data, data_size);
 }

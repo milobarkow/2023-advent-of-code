@@ -1,2 +1,5 @@
 all:
-	gcc -g -Wall -Wextra runner.c -o runner.exe
+	gcc -o main -g -Wall -Wextra main.c
+
+test:
+	gcc -g -Wall -Wextra test.c -o test
