@@ -1,7 +1,5 @@
-#include <stdio.h>
-#include <ctype.h>
-#include <stdlib.h>
-#include <string.h>
+#ifndef DAY_2
+#define DAY_2
 
 void partOne2(char **data, size_t data_size) {
     int count = 0;
@@ -83,3 +81,5 @@ void dayTwo(char **data, size_t data_size) {
     partOne2(data, data_size);
     partTwo2(data, data_size);
 }
+
+#endif // DAY_2

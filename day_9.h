@@ -1,6 +1,9 @@
+#ifndef DAY_9
+#define DAY_9
+
 #include "common.h"
 
-void parseLine(int **nums, char* line) {
+void parse(int **nums, char* line) {
     const char dels[] = " \n";
     char *token;
     token = strtok(line, dels);
@@ -44,7 +47,7 @@ void partOne9(char **data, size_t data_size) {
     long long int count = 0;
     int *nums = NULL;
     for (size_t i = 0; i < data_size; i++) {
-        parseLine(&nums, data[i]);
+        parse(&nums, data[i]);
         count += (long long int)getNext(nums, arrlen(nums), 1);
         nums = NULL;
     }
@@ -55,7 +58,7 @@ void partTwo9(char **data, size_t data_size) {
     long long int count = 0;
     int *nums = NULL;
     for (size_t i = 0; i < data_size; i++) {
-        parseLine(&nums, data[i]);
+        parse(&nums, data[i]);
         count += (long long int)getNext(nums, arrlen(nums), 2);
         nums = NULL;
     }
@@ -66,3 +69,5 @@ void dayNine(char **data, size_t data_size) {
     partOne9(data, data_size);
     partTwo9(data, data_size);
 }
+
+#endif // DAY_9

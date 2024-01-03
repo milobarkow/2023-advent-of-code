@@ -1,4 +1,5 @@
-#include <ctype.h>
+#ifndef DAY_3
+#define DAY_3
 
 #include "common.h"
 
@@ -53,7 +54,7 @@ void partTwo3(char **data, size_t data_size) {
     int count = 0;
     int line_length = 140;
 
-    char** data_copy = copyCharArray(data, data_size, line_length);
+    char** data_copy = copyCharArray(data, data_size);
 
     int tracker_data_size = 4;
     int tracker[data_size][line_length][tracker_data_size];
@@ -108,3 +109,5 @@ void dayThree(char **data, size_t data_size) {
     partOne3(data, data_size);
     partTwo3(data, data_size);
 }
+
+#endif // DAY_3

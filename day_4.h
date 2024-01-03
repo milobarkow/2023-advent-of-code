@@ -1,3 +1,6 @@
+#ifndef DAY_4
+#define DAY_4
+
 #include "common.h"
 
 void partOne4(char **data, size_t data_size) {
@@ -108,3 +111,5 @@ void dayFour(char **data, size_t data_size) {
     partOne4(data, data_size);
     partTwo4(data, data_size);
 }
+
+#endif // DAY_4

@@ -1,5 +1,5 @@
-#include <ctype.h>
-#include <errno.h>
+#ifndef DAY_7
+#define DAY_7
 
 #include "common.h"
 
@@ -126,7 +126,7 @@ void partOne7(char **data, size_t data_size) {
     for (size_t i = 0; i < data_size; i++) {
         count += tracker[i].val * (i + 1);
     }
-    return count;
+    printf("Part 1 Answer: %i\n", count);
 }
 
 int getJokerCount(const char *hand) {
@@ -198,3 +198,5 @@ void daySeven(char **data, size_t data_size) {
     partOne7(data, data_size);
     partTwo7(data, data_size);
 }
+
+#endif // DAY_7

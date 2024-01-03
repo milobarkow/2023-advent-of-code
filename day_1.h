@@ -1,5 +1,5 @@
-#include <stdio.h>
-#include <ctype.h>
+#ifndef DAY_1
+#define DAY_1
 
 void partOne1(char **data, size_t data_size) {
     int count = 0;
@@ -60,3 +60,5 @@ void dayOne(char **data, size_t data_size) {
     partOne1(data, data_size);
     partTwo1(data, data_size);
 }
+
+#endif // DAY_1

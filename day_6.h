@@ -1,8 +1,7 @@
-#include <ctype.h>
-#include <errno.h>
+#ifndef DAY_6
+#define DAY_6
 
 #include "common.h"
-
 
 #define INFO_ROWS 2
 #define INFO_COLS 1
@@ -71,10 +70,10 @@ void partTwo6(char **data, size_t data_size) {
 
     long long int time_n = atoll(time);
     long long int distance_n = atoll(distance);
-    int curr = 0;
+    int count = 0;
     for (long long int j = 0; j <= time_n; j++) {
         long long int a = j * (time_n - j);
-        if (a > distance_n) curr++;
+        if (a > distance_n) count++;
     }
     printf("Part 2 Answer: %i\n", count);
 }
@@ -83,3 +82,5 @@ void daySix(char **data, size_t data_size) {
     partOne6(data, data_size);
     partTwo6(data, data_size);
 }
+
+#endif // DAY_6

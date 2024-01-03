@@ -1,3 +1,6 @@
+#ifndef DAY_8
+#define DAY_8
+
 #include "common.h"
 
 void parseLine(char *parsed_line[], char* line) {
@@ -158,3 +161,5 @@ void dayEight(char **data, size_t data_size) {
     partOne8(data, data_size);
     partTwo8(data, data_size);
 }
+
+#endif // DAY_8
