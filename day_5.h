@@ -5,17 +5,10 @@
 
 #include <inttypes.h>
 
-typedef struct {
-    size_t *items;
-    size_t count;
-    size_t capacity;
-} DA_UI;
-
 void parseNums(DA_UI *nums, char* line, const char dels[]) {
     char *token;
     token = strtok(line, dels);
     while ( token != NULL ) {
-        // printf("%s\n", token);
         size_t n = atoi(token);
         da_append(nums, n);
         token = strtok(NULL, dels);

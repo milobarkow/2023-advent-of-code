@@ -33,6 +33,24 @@
         (da)->items[(da)->count++] = (item);                                         \
     } while (0)
     
+typedef struct {
+    size_t *items;
+    size_t count;
+    size_t capacity;
+} DA_UI;
+
+typedef struct {
+    char *items;
+    size_t count;
+    size_t capacity;
+} DA_CHAR;
+
+typedef struct {
+    char **items;
+    size_t count;
+    size_t capacity;
+} DA_STR;
+    
 char** copyCharArray(char** original, size_t rows) {
     char** copy = (char**)malloc(rows * sizeof(char*));
     if (copy == NULL) {

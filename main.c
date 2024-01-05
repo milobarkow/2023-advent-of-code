@@ -13,6 +13,7 @@
 #include "day_9.h"
 #include "day_10.h"
 #include "day_11.h"
+#include "day_12.h"
 
 #define MAX_LINE_LENGTH 1000
 
@@ -52,12 +53,16 @@ int main(int argc, char **argv) {
     case 8: dayEight(lines, lineCount); break;
     case 9: dayNine(lines, lineCount); break;
     case 10: dayTen(lines, lineCount); break;
-    default: printf("Invalid day number"); break;
+    case 11: dayElleven(lines, lineCount); break;
+    case 12: dayTwelve(lines, lineCount); break;
+    default: printf("No day provided\n"); break;
     }
 
     end_time = clock();
     cpu_time_used = ((double) (end_time - start_time)) / CLOCKS_PER_SEC;
-    printf("Time: %f seconds\n", cpu_time_used);
+    if (cpu_time_used > 0.0) {
+        printf("Time: %f seconds\n", cpu_time_used);
+    }
 
     freeCharArray(lines, lineCount);
     return 0;

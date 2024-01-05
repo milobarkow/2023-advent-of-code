@@ -6,17 +6,6 @@
 #include <math.h>
 #include <inttypes.h>
 
-typedef struct {
-    size_t *items;
-    size_t count;
-    size_t capacity;
-} DA_UI;
-
-typedef struct {
-    char *items;
-    size_t count;
-    size_t capacity;
-} DA_CHAR;
 
 typedef struct Point {
     size_t x;
@@ -190,7 +179,7 @@ void partTwo11(char **data, size_t data_size) {
     for (size_t i = 0; i < space_h; i++) {
         for (size_t j = 0; j < space_w; j++) {
             if (data[i][j] == '#') {
-                struct Point p = {
+                Point p = {
                     .x = j,
                     .y = i,
                     .id = point_tracker + 1,

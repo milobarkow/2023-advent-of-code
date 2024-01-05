@@ -37,7 +37,6 @@ void swap(Hand hands[], int j) {
     Hand temp = hands[j];
     hands[j] = hands[j + 1];
     hands[j + 1] = temp;
-
 }
 
 void sort(Hand hands[], int size, size_t part) {
@@ -134,7 +133,7 @@ int getJokerCount(const char *hand) {
     for (int i = 0; i < HAND_SIZE; i++) {
         if (hand[i] == 'J') count++;
     }
-    printf("Part 1 Answer: %i\n", count);
+    return count;
 }
 
 void partTwo7(char **data, size_t data_size) {

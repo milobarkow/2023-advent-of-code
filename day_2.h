@@ -3,7 +3,7 @@
 
 void partOne2(char **data, size_t data_size) {
     int count = 0;
-    for (int i = 0; i < data_size; i++) {
+    for (size_t i = 0; i < data_size; i++) {
         char *c = data[i];
 
         int id_len = strchr(c, ':') - strchr(c, ' ');
@@ -43,7 +43,7 @@ void partOne2(char **data, size_t data_size) {
 
 void partTwo2(char **data, size_t data_size) {
     int count = 0;
-    for (int i = 0; i < data_size; i++) {
+    for (size_t i = 0; i < data_size; i++) {
         char *c = strchr(data[i], ':') + 1;
         int temp = 0, r = 0, g = 0, b = 0;
         char color[10] = "";
