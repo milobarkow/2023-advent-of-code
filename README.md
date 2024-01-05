@@ -5,10 +5,12 @@ I am using this as an opportunity to learn C and further improve my programming 
 
 ## Usage:
 
-Copy the relevant days input to "input.txt" in the same directory as runner.c
-Run the main script:
+Copy the relevant days input to "input.txt" in the same directory as main.c
+Run the make file
+Run the executable passing in the day to be run as an argument
+For example, to run day 10:
 
 ```bash
 make
-./runner.exe
+./main day
 ```
